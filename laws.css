@@ -1,0 +1,88 @@
+/* ============ Вкладка «Законодательство» (стиль шпаргалки) ============ */
+#laws { --ax: #ff6a00; --ax-bright: #ff8c1a; --ax-deep: #ff3d00; }
+
+#laws .laws-toolbar{
+  display:flex; align-items:center; gap:.6rem; flex-wrap:wrap;
+  justify-content:space-between; margin-bottom:.5rem;
+}
+#laws .laws-search-wrap{ position:relative; flex:1; min-width:180px; max-width:340px; }
+#laws .laws-search-wrap span{ position:absolute; left:.65rem; top:50%; transform:translateY(-50%); color:var(--ax-bright); opacity:.8; }
+#laws #laws-search{
+  width:100%; padding:.5rem .7rem .5rem 2rem; border-radius:.6rem;
+  background:rgba(255,106,0,.08); border:1px solid rgba(255,106,0,.25);
+  color:var(--text); font-size:.85rem; outline:none; transition:border-color .15s, background .15s;
+}
+#laws #laws-search:focus{ border-color:var(--ax-bright); background:rgba(255,106,0,.13); }
+#laws #laws-search::placeholder{ color:var(--muted); }
+
+#laws #laws-modes{ display:flex; gap:.25rem; background:rgba(255,106,0,.08); border:1px solid rgba(255,106,0,.2); border-radius:.6rem; padding:.18rem; }
+#laws .laws-mode-btn{ font-size:.74rem; font-weight:600; color:#cbd5e1; padding:.32rem .6rem; border-radius:.45rem; white-space:nowrap; border:none; background:none; transition:all .15s; }
+#laws .laws-mode-btn:hover{ color:#fff; }
+#laws .laws-mode-btn.active{ background:linear-gradient(135deg,var(--ax-bright),var(--ax-deep)); color:#1a0a00; }
+
+#laws .laws-legend{ display:flex; flex-wrap:wrap; align-items:center; gap:.3rem 1rem; font-size:.72rem; color:var(--muted); margin-bottom:.7rem; }
+#laws .lg-fine{ font-weight:700; font-size:.66rem; color:#fff; background:rgba(255,106,0,.18); border:1px solid rgba(255,140,26,.45); padding:.04rem .3rem; border-radius:5px; }
+#laws .lg-lic{ font-weight:600; font-size:.64rem; color:#ffd9b3; background:rgba(255,61,0,.12); border:1px dashed rgba(255,106,0,.55); padding:.04rem .3rem; border-radius:5px; }
+#laws .lg-star{ color:var(--ax-bright); font-size:.85rem; }
+
+/* sections */
+#laws section[data-section]{ margin-bottom:1.1rem; }
+#laws .section-head{ display:flex; align-items:center; gap:.6rem; margin-bottom:.55rem; }
+#laws .section-head h2{ font-family:"Space Grotesk", Inter, sans-serif; font-weight:700; font-size:1.02rem; letter-spacing:-.01em; color:var(--text); margin:0; }
+#laws .count{ font-size:.68rem; font-weight:600; color:var(--ax-bright); background:rgba(255,106,0,.12); border:1px solid rgba(255,106,0,.3); padding:.1rem .45rem; border-radius:999px; }
+#laws .section-head .line{ flex:1; height:1px; background:linear-gradient(90deg,rgba(255,106,0,.4),transparent); }
+
+/* law grid */
+#laws .law-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr)); gap:.4rem; }
+#laws .law-row{ display:flex; align-items:center; gap:.5rem; padding:.4rem .6rem; border-radius:9px; border:1px solid rgba(255,106,0,.13); background:rgba(255,106,0,.035); transition:border-color .15s, background .15s; }
+#laws .law-row:hover{ border-color:rgba(255,140,26,.5); background:rgba(255,106,0,.08); }
+#laws .law-num{ flex-shrink:0; font-family:"Space Grotesk", sans-serif; font-weight:700; font-size:.74rem; color:#1a0a00; background:linear-gradient(135deg,var(--ax-bright),var(--ax-deep)); padding:.16rem .4rem; border-radius:6px; min-width:50px; text-align:center; box-shadow:0 0 10px rgba(255,106,0,.2); }
+#laws .law-name{ flex:1; font-size:.8rem; line-height:1.2; color:#e9eaec; font-weight:500; min-width:0; }
+#laws .pdd{ display:inline-block; margin-left:.35rem; font-size:.62rem; font-weight:600; color:#9ca3af; border:1px solid rgba(148,163,184,.3); border-radius:4px; padding:0 .25rem; vertical-align:middle; }
+#laws .law-pun{ flex-shrink:0; display:flex; align-items:center; gap:.25rem; flex-wrap:wrap; justify-content:flex-end; max-width:46%; }
+#laws .b-or{ font-size:.6rem; color:#9ca3af; text-transform:uppercase; }
+#laws .badge-fine{ font-family:"Space Grotesk", sans-serif; font-weight:700; font-size:.76rem; color:#fff; background:rgba(255,106,0,.18); border:1px solid rgba(255,140,26,.45); padding:.12rem .4rem; border-radius:6px; white-space:nowrap; }
+#laws .badge-lic{ font-weight:600; font-size:.68rem; color:#ffd9b3; background:rgba(255,61,0,.12); border:1px dashed rgba(255,106,0,.55); padding:.12rem .35rem; border-radius:6px; white-space:nowrap; }
+#laws .badge-jail{ display:flex; flex-direction:column; align-items:center; line-height:1; background:rgba(255,61,0,.14); border:1px solid rgba(255,61,0,.5); padding:.12rem .4rem; border-radius:6px; }
+#laws .badge-jail .stars{ color:var(--ax-bright); font-size:.72rem; letter-spacing:.5px; text-shadow:0 0 8px rgba(255,140,26,.5); }
+#laws .badge-jail .days{ color:#ffd9b3; font-size:.56rem; font-weight:600; margin-top:1px; white-space:nowrap; }
+#laws .badge-text{ font-size:.66rem; color:#ffd9b3; line-height:1.25; text-align:right; }
+
+/* proc blocks */
+#laws .proc-grid{ display:grid; grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr)); gap:.5rem; }
+#laws .proc-block{ border:1px solid rgba(255,106,0,.14); border-radius:10px; background:rgba(255,106,0,.04); padding:.5rem .6rem; break-inside:avoid; }
+#laws .proc-head{ display:flex; align-items:center; gap:.4rem; margin-bottom:.3rem; }
+#laws .proc-num{ font-family:"Space Grotesk", sans-serif; font-weight:700; font-size:.66rem; color:#1a0a00; background:linear-gradient(135deg,var(--ax-bright),var(--ax-deep)); padding:.1rem .35rem; border-radius:5px; white-space:nowrap; }
+#laws .proc-title{ font-size:.78rem; font-weight:600; color:#fff; line-height:1.15; }
+#laws .proc-list{ margin:0; padding-left:.9rem; list-style:none; }
+#laws .proc-list li{ position:relative; font-size:.72rem; line-height:1.3; color:#c9ccd1; padding:.04rem 0; }
+#laws .proc-list li::before{ content:"▸"; position:absolute; left:-.85rem; color:var(--ax-bright); font-size:.6rem; top:.18rem; }
+
+#laws .hide{ display:none !important; }
+#laws #laws-noresult{ text-align:center; color:var(--muted); padding:3rem 0; }
+
+/* информационная карточка (ФЗ для ВСРФ — скоро) */
+#laws .laws-note{ margin-top:.4rem; border:1px dashed rgba(255,106,0,.4); background:rgba(255,106,0,.05); border-radius:10px; padding:.6rem .8rem; font-size:.78rem; color:var(--muted); }
+#laws .laws-note b{ color:var(--ax-bright); }
+
+/* ============ РЕЖИМ «всё на экране» ============ */
+#laws.laws-fit #laws-fitwrap{ overflow:hidden; }
+#laws.laws-fit #laws-content{ transform-origin:top left; column-count:var(--cols,6); column-gap:6px; }
+#laws.laws-fit #laws-content > *{ margin:0 0 4px 0; break-inside:auto; }
+#laws.laws-fit .section-head{ break-inside:avoid; break-after:avoid; margin:6px 0 3px; }
+#laws.laws-fit .section-head h2{ font-size:.74rem; }
+#laws.laws-fit .section-head .count{ font-size:.55rem; }
+#laws.laws-fit .section-head .line{ display:none; }
+#laws.laws-fit .law-grid, #laws.laws-fit .proc-grid{ display:block; }
+#laws.laws-fit .law-row{ break-inside:avoid; margin-bottom:2px; padding:.2rem .35rem; gap:.3rem; border-radius:6px; }
+#laws.laws-fit .law-num{ min-width:42px; font-size:.66rem; padding:.08rem .25rem; }
+#laws.laws-fit .law-name{ font-size:.7rem; line-height:1.12; }
+#laws.laws-fit .law-pun{ max-width:42%; gap:.15rem; }
+#laws.laws-fit .badge-fine{ font-size:.66rem; padding:.05rem .28rem; }
+#laws.laws-fit .badge-jail{ padding:.05rem .28rem; }
+#laws.laws-fit .badge-jail .stars{ font-size:.62rem; }
+#laws.laws-fit .badge-jail .days{ font-size:.5rem; }
+#laws.laws-fit .proc-block{ break-inside:avoid; padding:.3rem .4rem; margin-bottom:3px; }
+#laws.laws-fit .proc-title{ font-size:.66rem; }
+#laws.laws-fit .proc-list li{ font-size:.62rem; line-height:1.18; }
+#laws.laws-fit .laws-note{ display:none; }
