@@ -1,0 +1,91 @@
+:root{ --axion:#ff6a00; --axion-bright:#ff8c1a; --axion-deep:#ff3d00; }
+*{font-family:"Inter",system-ui,sans-serif}
+.font-display{font-family:"Space Grotesk",system-ui,sans-serif}
+html{scroll-behavior:smooth}
+.text-axion{color:var(--axion-bright)}
+.text-axion-bright{color:var(--axion-bright)}
+
+/* background */
+.glow-bg{position:fixed;inset:0;z-index:-1;overflow:hidden;background:radial-gradient(120% 90% at 50% -10%,#1a0c03 0%,#0a0604 55%)}
+.glow{position:absolute;border-radius:50%;filter:blur(130px);opacity:.38}
+.glow-1{width:46vw;height:46vw;background:var(--axion-deep);top:-14%;left:-8%}
+.glow-2{width:40vw;height:40vw;background:var(--axion);bottom:-12%;right:-6%}
+.grid-overlay{position:absolute;inset:0;background-image:linear-gradient(rgba(255,106,0,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,106,0,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(circle at 50% 20%,#000 0%,transparent 70%)}
+
+.logo-mark{width:22px;height:22px;border-radius:6px;background:linear-gradient(135deg,var(--axion-deep),var(--axion-bright));box-shadow:0 0 14px rgba(255,106,0,.6);position:relative;flex-shrink:0}
+.logo-mark::after{content:"";position:absolute;inset:5px;border-radius:3px;background:#0a0604;clip-path:polygon(50% 0,100% 100%,0 100%)}
+
+/* mode buttons */
+.mode-btn{font-size:11px;font-weight:600;color:#cbd5e1;padding:.3rem .55rem;border-radius:7px;white-space:nowrap;transition:all .15s}
+.mode-btn:hover{color:#fff}
+.mode-btn.active{background:linear-gradient(135deg,var(--axion-bright),var(--axion-deep));color:#1a0a00}
+
+/* sections */
+.section-head{display:flex;align-items:center;gap:.6rem;margin-bottom:.6rem}
+.section-head h2{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:1.05rem;letter-spacing:-.01em}
+.count{font-size:.68rem;font-weight:600;color:var(--axion-bright);background:rgba(255,106,0,.12);border:1px solid rgba(255,106,0,.3);padding:.1rem .45rem;border-radius:999px}
+.gov-tag{font-size:.6rem;font-weight:600;text-transform:uppercase;letter-spacing:.05em;color:#9ca3af;border:1px solid rgba(255,106,0,.25);padding:.1rem .4rem;border-radius:999px}
+.section-head .line{flex:1;height:1px;background:linear-gradient(90deg,rgba(255,106,0,.4),transparent)}
+
+/* law grid */
+.law-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,420px),1fr));gap:.4rem}
+.police-grid{grid-template-columns:repeat(auto-fill,minmax(min(100%,340px),1fr))}
+.law-row{display:flex;align-items:center;gap:.5rem;padding:.4rem .6rem;border-radius:9px;border:1px solid rgba(255,106,0,.13);background:rgba(255,106,0,.035);transition:border-color .15s,background .15s}
+.law-row:hover{border-color:rgba(255,140,26,.5);background:rgba(255,106,0,.08)}
+.law-num{flex-shrink:0;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.74rem;color:#1a0a00;background:linear-gradient(135deg,var(--axion-bright),var(--axion-deep));padding:.16rem .4rem;border-radius:6px;min-width:50px;text-align:center;box-shadow:0 0 10px rgba(255,106,0,.2)}
+.law-ref{flex-shrink:0;font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.68rem;color:var(--axion-bright);background:rgba(255,106,0,.1);border:1px solid rgba(255,106,0,.3);padding:.16rem .4rem;border-radius:6px;min-width:62px;text-align:center;white-space:nowrap}
+.law-name{flex:1;font-size:.8rem;line-height:1.2;color:#e9eaec;font-weight:500;min-width:0}
+.pdd{display:inline-block;margin-left:.35rem;font-size:.62rem;font-weight:600;color:#9ca3af;border:1px solid rgba(148,163,184,.3);border-radius:4px;padding:0 .25rem;vertical-align:middle}
+.law-pun{flex-shrink:0;display:flex;align-items:center;gap:.25rem;flex-wrap:wrap;justify-content:flex-end;max-width:46%}
+.b-or{font-size:.6rem;color:#9ca3af;text-transform:uppercase}
+.badge-fine{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.76rem;color:#fff;background:rgba(255,106,0,.18);border:1px solid rgba(255,140,26,.45);padding:.12rem .4rem;border-radius:6px;white-space:nowrap}
+.badge-lic{font-weight:600;font-size:.68rem;color:#ffd9b3;background:rgba(255,61,0,.12);border:1px dashed rgba(255,106,0,.55);padding:.12rem .35rem;border-radius:6px;white-space:nowrap}
+.badge-jail{display:flex;flex-direction:column;align-items:center;line-height:1;background:rgba(255,61,0,.14);border:1px solid rgba(255,61,0,.5);padding:.12rem .4rem;border-radius:6px}
+.badge-jail .stars{color:var(--axion-bright);font-size:.72rem;letter-spacing:.5px;text-shadow:0 0 8px rgba(255,140,26,.5)}
+.badge-jail .days{color:#ffd9b3;font-size:.56rem;font-weight:600;margin-top:1px;white-space:nowrap}
+.badge-text{font-size:.66rem;color:#ffd9b3;line-height:1.25;text-align:right}
+
+/* legend chips */
+.lg-fine{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.66rem;color:#fff;background:rgba(255,106,0,.18);border:1px solid rgba(255,140,26,.45);padding:.04rem .3rem;border-radius:5px}
+.lg-lic{font-weight:600;font-size:.64rem;color:#ffd9b3;background:rgba(255,61,0,.12);border:1px dashed rgba(255,106,0,.55);padding:.04rem .3rem;border-radius:5px}
+.lg-star{color:var(--axion-bright);font-size:.8rem}
+
+/* proc blocks */
+.proc-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,300px),1fr));gap:.5rem}
+.proc-block{border:1px solid rgba(255,106,0,.14);border-radius:10px;background:rgba(255,106,0,.04);padding:.5rem .6rem;break-inside:avoid}
+.proc-head{display:flex;align-items:center;gap:.4rem;margin-bottom:.3rem}
+.proc-num{font-family:"Space Grotesk",sans-serif;font-weight:700;font-size:.66rem;color:#1a0a00;background:linear-gradient(135deg,var(--axion-bright),var(--axion-deep));padding:.1rem .35rem;border-radius:5px;white-space:nowrap}
+.proc-title{font-size:.78rem;font-weight:600;color:#fff;line-height:1.15}
+.proc-list{margin:0;padding-left:.9rem;list-style:none}
+.proc-list li{position:relative;font-size:.72rem;line-height:1.3;color:#c9ccd1;padding:.04rem 0}
+.proc-list li::before{content:"▸";position:absolute;left:-.85rem;color:var(--axion-bright);font-size:.6rem;top:.18rem}
+
+.hide{display:none !important}
+
+/* ============ FIT MODES (всё на одном экране) ============ */
+#fitwrap{width:100%}
+body.fit{overflow:hidden;height:100vh}
+body.fit #topbar{position:fixed;top:0;left:0;right:0}
+body.fit #fitwrap{position:fixed;left:0;right:0;bottom:0;top:74px;overflow:hidden}
+body.fit #foot{display:none}
+body.fit #content{transform-origin:top left;padding:6px 8px;margin:0;max-width:none;column-count:var(--cols,6);column-gap:6px}
+body.fit #content>*{margin:0 0 4px 0}
+body.fit section{break-inside:auto}
+body.fit .section-head{break-inside:avoid;break-after:avoid;margin:6px 0 3px;display:flex}
+body.fit .section-head h2{font-size:.74rem}
+body.fit .section-head .count{font-size:.55rem}
+body.fit .section-head .line{display:none}
+body.fit .law-grid,body.fit .police-grid,body.fit .proc-grid{display:block}
+body.fit .law-row{break-inside:avoid;margin-bottom:2px;padding:.2rem .35rem;gap:.3rem;border-radius:6px}
+body.fit .law-num{min-width:42px;font-size:.66rem;padding:.08rem .25rem}
+body.fit .law-ref{min-width:54px;font-size:.6rem;padding:.08rem .25rem}
+body.fit .law-name{font-size:.7rem;line-height:1.12}
+body.fit .law-pun{max-width:42%;gap:.15rem}
+body.fit .badge-fine{font-size:.66rem;padding:.05rem .28rem}
+body.fit .badge-jail{padding:.05rem .28rem}
+body.fit .badge-jail .stars{font-size:.62rem}
+body.fit .badge-jail .days{font-size:.5rem}
+body.fit .proc-block{break-inside:avoid;padding:.3rem .4rem;margin-bottom:3px}
+body.fit .proc-title{font-size:.66rem}
+body.fit .proc-list li{font-size:.62rem;line-height:1.18}
+body.fit #noresult{position:fixed;top:50%;left:50%;transform:translate(-50%,-50%)}
